@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Real Estate Management System</title>
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,800;1,800&display=swap" rel="stylesheet">
+
+
+  <!-- CSS Stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="CSS/styles.css">
+
+   <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/8334731460.js" crossorigin="anonymous"></script>
+
+  <!-- bootstrap script  -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <section id="title">
+    <div class="container-fluid">
+
+      
+
+     <!-- Nav Bar -->
+     <center>
+   <br>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      
+      <a class="navbar-logo" href="">
+        <img class="nav-logo ml-auto" src="data:image/png;base64,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" alt="">
+      </a>
+
+  
+     
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo"> 
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto">
+    
+     <li class="nav-item">
+          <a class="page-scroll active text-white" href="#home">Home</a>
+      </li>
+     <li class="nav-item">
+        <a class="page-scroll text-white" href="#features">Description</a>
+    </li>
+    <li class="nav-item">
+          <a class="page-scroll text-white" href="#about">About</a>
+      </li>
+      <li class="nav-item">
+          <a class="page-scroll text-white" href="#footer">Contact</a>
+      </li>
+
+     </ul>
+     </div>
+     </nav>
+     
+
+    </tr></table>
+    <br>
+  </center>
+  <br>
+  <br>
+
+      
+  
+  
+    <!-- Title -->
+     
+  <div class="row">
+
+    <div class="col-lg-6">
+
+    <h2><i>An all in one</i></h2>
+      <h1><b>Real Estate Management Software </b></h1>
+    <h2><i>Everything At Your Fingertips</i></h2>
+      <p>Manage multiple sites , plots, brochures, site images & location, digital layouts with real time availability, customers, agents, transactions & billing , digital marketing etc
+         Works both Offline ( with out internet - office purpose ) & Online
+         </p>
+         <a href="#features"><button type="button" class="btn btn-dark btn-lg download-button">Explore</button></a>
+         <a href="#footer"><button type="button" class="btn btn-dark btn-lg download-button">Contact Us</button></a>
+        </div>
+     
+  <div class=" title-img col-lg-6">
+    <img class="title-image col-lg-12" src="https://www.thewebblinders.in/products/real-estate-management-system/assets/img/hero/chart.jpg">
+  </div>
+
+  </div>
+  <br>
+  <br>
+
+</section>
+
+
+  <!-- Features -->
+
+
+  <section id="features">
+    <div class="row">
+      <div class="feature-box col-lg-12">
+ 
+   <table>
+       <tr>
+        <td>
+      <img class="mid-img" src="https://www.thewebblinders.in/products/real-estate-management-system/assets/img/hero/available.jpg" alt="">
+    </td>
+    <td>
+    <h3><b>Real Time Plot Availability</b></h3>
+       <p class="unique">We offer a Digital Layout with automatic updates of plot status ( sold / unsold )  Interaction support You can click on a plot to get its details ( facing , measurements, ) Filter plots based on their Facings (North , East etc).</p>
+    
+  </td>
+    </tr>
+  </div>
+ 
+ 
+<hr>
+    <div class="feature-box col-lg-12">
+      <tr><td>
+     <img class="mid-img"src="https://www.thewebblinders.in/products/real-estate-management-system/assets/img/hero/autocad.jpg" alt="">
+    </td>
+    <td><h3><b>Spend More Time On Selling Rather Than Marking Plots On AutoCAD</b></h3>
+      <p class="unique">Agents / Employees / Brokers do not have to contact the office every time for the latest layout when they are with a customer.</p>
+    </td>  
+    </tr>    
+    </div>
+    
+
+
+
+     <div class="feature-box col-lg-12">  
+       <tr><td>
+    <img class="mid-img" src="https://www.thewebblinders.in/products/real-estate-management-system/assets/img/hero/plot-booking.jpg" alt="">
+     </td>
+     <td>
+      <h3><b>Plot Booking</b></h3>
+      <p class="unique">In this application we are not only changing the status of a plot, we can also store every information regarding the sales for future use.
+       Who bought the plot ? - Customer Who brokered the deal ? - Agent / Broker What brokerage / incentive did we offer ? - Brokerage / Incentive
+        Who registered the booking ? - Employee / Partner</p>
+      </td>
+      </tr>
+     </div>
+     
+   
+
+    
+     <div class="feature-box col-lg-12">
+       <tr><td>
+      <img class="mid-img" src="https://www.thewebblinders.in/products/real-estate-management-system/assets/img/hero/transaction.jpg" alt="">
+    </td>
+    <td>
+      <h3><b>Transactions</b></h3>
+      <p class="unique">Be it a 1/4th payment or an emi installment, all payments of a booking can be recorded in the system.</p>
+    </td>
+    </tr>
+    </div>
+    
+
+    <div class="feature-box col-lg-12">
+      <tr><td>
+     <img class="mid-img" src="https://www.thewebblinders.in/products/real-estate-management-system/assets/img/hero/reminder.jpg" alt="">
+    </td>
+    <td><h3><b>Payment Reminders</b></h3>
+      <p class="unique">Did the customer say, the next payment will be done next week ? You can add reminders for each booking, so that we can contact them on the agreed date.</p>
+    </td>
+    </tr>
+    </div>
+   
+
+  
+    <div class="feature-box col-lg-12">
+      <tr><td>
+      <img class="mid-img" src="https://www.thewebblinders.in/products/real-estate-management-system/assets/img/hero/uploads-doc.jpg" alt="">
+    </td>
+    <td>
+    <h3><b>Uploads-Documents</b></h3>
+      <p class="unique">Can Upload necessary attachments like registration documents.</p>
+    </td>
+    </tr>
+    </div>
+    
+
+    
+  
+    <div class="feature-box col-lg-12">
+      <tr><td>
+      <img class="mid-img" src="https://www.thewebblinders.in/products/real-estate-management-system/assets/img/hero/invoice.jpg" alt="">
+    </td>
+    <td>
+      <h3><b>Invoices</b></h3>
+      <p class="unique">Generate invoices with payment history. Every generated invoice will be given a unique Id and will be stored in the system.</p>
+    </td>
+    </tr>
+    </div>
+   
+
+    
+    <div class="feature-box col-lg-12">
+      <tr><td>
+      <img class="mid-img" src="https://www.thewebblinders.in/products/real-estate-management-system/assets/img/hero/booking-filter.jpg" alt="">
+    </td>
+    <td>
+      <h3><b>Searching & Filtering & Reports</b></h3>
+      <p class="unique">Search & Filter Bookings, Transactions, Plots, Remainders. • Leads from all offline and online platforms are tracked automatically
+      • All metrics and Reports are available on a single dashboard
+      • Lead data is recorded and updated easily</p>
+    </td>
+    
+    </tr>
+    </div>
+ </div>
+</table>
+
+ </section>
+ <hr>
+
+
+
+
+  <!-- Testimonials -->
+
+  <center>
+  <section id="testimonials">
+
+    <div id= "carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <br>
+
+      <h2 class="cursive"><b>Our Products And Feedbacks</b></h2>
+      <br>
+      <br>
+      <br>
+
+       <div class="carousel-item active" data-bs-interval="1000">
+         <img class="test-img" src="https://www.thewebblinders.in/products/real-estate-management-system/assets/img/hero/brahmaputra.jpg" alt="">
+          <br>
+          <h2><b>Brahmaputra Construction</b></h2>
+          <br>
+          <p class="unique">Increased efficiency of my team, reduced workload & paper work.</p>
+         <p><b> Product - Real Estate Management System</b></p>
+         <br>
+          <a href="" class="btn" data-wow-delay=".8s" data-wow-duration="1.3s">
+          </a>
+         
+        </div>
+    
+        <div class="carousel-item" data-bs-interval="1000">
+          <img class="test-img" src="https://www.thewebblinders.in/products/real-estate-management-system/assets/img/hero/Prathista.jpg" alt="">
+         <br>
+          <h2><b>Prathista Projects</b></h2>
+         <br>
+          <p class="unique">    
+            Helped us remove Fraud & clumsy work. Nice approach and great support</p> 
+         <p><b>Product - Real Estate Management System , Construction Management System</b></p>
+         <br>
+          <a href="" class="btn" data-wow-delay=".8s" data-wow-duration="1.3s">
+           </a>
+        </div>
+    
+        <div class="carousel-item" data-bs-interval="1000">
+        <img class="test-img"  src="https://www.thewebblinders.in/products/real-estate-management-system/assets/img/hero/angel-infra.jpg" alt="">
+         <br>
+          <h2><b>Angel Infra Projects</b></h2>
+         <br>
+          <p class="unique">    
+            Increased customer experience and eased the process of coordination between different departments internally.</p>
+           <p>  <b>Product - Real Estate Management System</b> </p>
+           <br>
+          <a href="" class="btn" data-wow-delay=".8s" data-wow-duration="1.3s">
+            </a>
+          
+        </div>
+    
+        <div class="carousel-item" data-bs-interval="1000">
+          <img class="test-img" src="https://www.thewebblinders.in/products/real-estate-management-system/assets/img/hero/gorantla_logo3.jpg" alt="">
+          <br>
+          <h2><b>Gorantla</b></h2>
+         <br>
+          <p class="unique">    
+            As we started expanding, it was a challenge for us to manage projects, clients, agents, employees at different occasions. 
+            Lucky for us, their software made it easy for us to manage all these things.</p>
+        <p> <b>Product - Real Estate Management System</b></p>
+        <br>
+          <a href="" class="btn" data-wow-delay=".8s" data-wow-duration="1.3s">
+            </a>
+        </div>
+    
+        <div class="carousel-item" data-bs-interval="1000">
+        <img class="test-img" src="https://www.thewebblinders.in/products/real-estate-management-system/assets/img/hero/gprec_logo1.png" alt="">
+          <br>
+          <h2><b>G. Pulla Reddy Engineering College (Autonomous)</b></h2>
+          <br>
+          <p class="unique">    
+            Eased the process of administration & collecting Faculty Data. 
+            Reduced a lot of workload on both parties Administration and Faculty.</p>
+           <p> <b>Product - Faculty Data Management System</b></p>
+           <br>
+            <a href="" class="btn" data-wow-delay=".8s" data-wow-duration="1.3s">
+             </a>
+         
+        </div>
+    
+      </div>
+       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    
+    </section>
+   </center>
+   
+    
+    
+    
+    
+    
+
+<!-- Press -->
+<section id="about">
+<hr>
+<br>
+<div class="about">
+   
+  <div class="skill-row">
+   <img class="skill0-img" src="https://www.thewebblinders.in/landing-page-assets/img/logo/logo.png" alt="skill1-img" srcset="">
+   <h2 class="cursive"><b>A little bit about ourselves</b></h2>
+   <br>
+    <p class="middle">The Web Blinders is always motivated to help clients achieve their digital goals and objectives. The employees are consistent innovators, continuously searching for efficient solutions that offer the best results. 
+      The team ensures that their outputs embody the message, mission, and vision of the clients..</p>
+      <p>It is our mission to make website design and development better and accessible to small businesses worldwide.
+        We develop Mobile Apps, Web Applications & System Softwares at affordable prices.</p>
+        <p> Proven track record in developing applications for Hotel Chains, 
+        Real Estate Companies, Educational Institutions etc.
+      </p>
+          <br>
+
+  </div>
+  </div>
+  <br>
+<hr>
+<br>
+<br>
+</section>
+
+  
+
+
+  
+
+<!-- Footer -->
+<center>
+
+<div class="footer-container">
+
+<footer id="footer">
+  <br>
+  <img class="footer-img" src="https://www.thewebblinders.in/landing-page-assets/img/logo/logo.png" alt="">
+<br>
+<br>
+
+  <p class="unique">© 2019 THE WEB BLINDERS - All Rights Reserved</p>
+  <table cellpadding="6">
+  <tr><td>
+    <a href="https://m.facebook.com/thewebblinders/">
+      <i class="fab fa-facebook"></i>
+    </a>
+    </td>
+<td>  
+  <a href="https://instagram.com/thewebblinders?utm_medium=copy_link">
+    <i class="fab fa-instagram"></i>
+  </a>
+</td>
+<td>
+  <a href="https://www.linkedin.com/company/the-web-blinders/mycompany/">
+    <i class="fab fa-linkedin"></i>
+  </a>
+</td>
+ 
+</tr>
+</table>
+ </footer>
+</center>
+
+</div>
+
+
+
+</body>
+
+</html>
+
