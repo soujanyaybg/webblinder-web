@@ -1,1 +1,115 @@
+body{
+    font-family: 'Merriweather Sans', sans-serif;
+    }
+hr{
+    color:white;
+}
 
+
+       
+
+.nav-logo{
+ width: 4%;
+ text-align:left;
+ margin-left: 20px;
+}
+
+.navbar{
+  background-color: black;
+  border-radius: 30px;
+  width: 80%;
+  text-align: center;
+}
+
+.navbar-brand{
+   font-size: 2.5rem;
+  font-weight: bold;
+  color:black
+}
+
+.nav-item{
+padding: 0 70px 0 70px;
+color: black;
+}
+.page-scroll{
+  color:white;
+}
+
+.nav-link{
+  font-size: 1.2rem;
+  color: black;
+}    
+
+.page-scroll{
+    color:black;
+}
+ hr{
+   background-color: white;
+  color:rgb(56, 166, 199);
+  border: dotted;
+  width: 5%;
+  margin: 100px auto 100px auto;
+  border-bottom: none;
+}         
+          
+a{
+  text-decoration: none;
+}
+
+.mid-img{
+    width:100%;
+    float:left;
+    padding: 40px 40px 40px 40px;
+}
+.test-img{
+    width:10%;
+    padding: auto 10px auto 10px;
+}
+
+.title-image{
+  width: 90%;
+}
+.skill0-img{
+    width: 25%;
+    float:left;
+    padding-right: 30px;
+    }
+  
+
+#title {
+    background-size: cover;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-color: rgb(173, 233, 230);
+    margin: auto auto 60px auto;
+
+ }
+ 
+#testimonials{
+    background-color: rgb(173, 233, 230);
+}
+
+.footer-container{
+  background-color: white;
+}
+a:hover{
+  color: rgb(56, 166, 199);
+}
+.fab{
+  color: black;
+}
+.footer-img{
+  width: 5%;
+}
+
+.gmap-iframe{
+  width:100%;
+ }
+
+.office{
+  color:black;
+  padding-right: 50px;
+}
+.footer-container{
+  background-color: rgb(211, 205, 205) ;
+}
